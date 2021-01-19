@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>ジャンケン大会</h1>
+    <p><img src = "hidari.gif" id = "player"></img> <img src = "migi.gif" id = "enemy"></img></p>
+    <p> <div id = "input">
+        <input type = "button" value = "ぐう" onclick = "choose (0)">
+        <input type = "button" value = "ぱあ" onclick = "choose (1)">
+        <input type = "button" value = "ちょき" onclick = "choose (2)">
+    </div>
+    <div id = "restart" style = "display: none"><input type = "button" value = "もう一回やる？" onclick = "init()"></div>
+    </p>
+    <p><div id = "result">勝負だ！</div></p>
+    
+
+</body>
+
+</html>
+
+<script>
+    const rock = 0;
+    const paper = 1;
+    const scissors = 2;
+
+    function init (){
+        document.getElementById ("player").src = "hidari.gif";
+        document.getElementById ("enemy").src = "migi.gif";
+        document.getElementById ("restart").style = "display: none";
+        document.getElementById ("input").style = "display: block";
+        document.getElementById ("result").innerHTML = "勝負だ！";
+    }
+
+    function choose (choice){
+        var playerChoice = choice;
+        var enemy = enemyChoose();
+
+        document.getElementById ("input").style = "display: none";
+
+        if (playerChoice == rock){
+            document.getElementById ("player").src = "hidariguu.png";  
+        }else if (playerChoice == paper){
+            document.getElementById ("player").src = "hidaripaa.png";
+        }else if (playerChoice == scissors){
+            document.getElementById ("player").src = "hidarichoki.png";
+        }
+
+        if ((enemy == rock && playerChoice == rock)||
+        (enemy == paper && playerChoice == paper) || 
+        (enemy == scissors && playerChoice == scissors)){
+            document.getElementById ("result").innerHTML = "引き分け！";
+        }else if ((enemy == rock && playerChoice == scissors) ||
+        (enemy == paper && playerChoice == rock) ||
+        (enemy == scissors && playerChoice == paper)){
+            document.getElementById ("result").innerHTML = "負けた!";
+        }else if ((enemy == rock && playerChoice == paper) ||
+        (enemy == paper && playerChoice == scissors) ||
+        (enemy == scissors && playerChoice == rock)){
+            document.getElementById ("result").innerHTML = "勝った！";
+        }
+        document.getElementById ("restart").style = "display: block";
+    }
+
+    function enemyChoose (){
+        var enemyChoice = Math.floor (Math.random() * 3);
+        if (enemyChoice == rock){
+            document.getElementById ("enemy").src = "migiguu.png";
+        }else if (enemyChoice == paper){
+            document.getElementById ("enemy").src = "migipaa.png";
+        }else if (enemyChoice == scissors){
+            document.getElementById ("enemy").src = "migichoki.png";
+        }
+        return enemyChoice;
+    }
+
+</script>

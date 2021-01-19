@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>ランダムな整数の作り方</h1>
+    <p>ランダムな整数作りたいときは、Math.random()というファンクションを使って、０－１の数字を作って、それに作りたい
+        上限をかけて、
+        Math.floor ()というファンクションで丸める。</p>
+
+        <p>例えば：</p>
+        <p>Math.random ();</p>
+        <p>を呼べば</p>
+        <div id = "random1"></div><input type = "button" value = "ランダムナンバー作成" onclick = "makeRandomNumber();">
+        <p>見ての通り、ランダムな数字が出るね</p>
+        <p>でも、私たちにほしいのは、整数だ。</p>
+        <p>上の数字に１００をかけてみよう</p>
+        <p>Math.random * 100</p>
+        <div id = "random2"></div><input type = "button" value = "100かけよう" onclick = "makeRandomNumber2();">
+        <p>惜しいけどそのデシマルは困るな。Math.floor()を使ってみよう！</p>
+        <p>Math.floor(Math.random ()*100)</p>
+        <div id = "random3"></div><input type = "button" value = "デシマル消す" onclick = "makeRandomNumber3();">
+        <p>０－１００のランダム数字が出る！課題で、敵を選択させる方法思いつくかな</p>
+
+
+</body>
+
+</html>
+
+<script>
+    var num1 = 0;
+    var num2 = 0;
+    var num3 = 0;
+    function makeRandomNumber (){
+        num1 = Math.random();
+        document.getElementById ("random1").innerHTML = num1;
+    }
+
+    function makeRandomNumber2 (){
+        num2 = num1 * 100;
+        document.getElementById ("random2").innerHTML = num2;
+    }
+
+    function makeRandomNumber3 (){
+        num3 = Math.floor(num2);
+        document.getElementById ("random3").innerHTML = num3;
+    }
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>If Statement</h1>
+        <p>If Statmentは、もしある条件が満たされたら、中のコードを行ってくださいとパソコンに伝えるようなもの</p>
+        <p>使えるオペレーター（演算子）は：<br/>
+        <p>> - greater than (大なり）</p>
+        <p>< - less than (小なり）</p>
+        <p>== - equals (イコール)　＊＊</p>
+        <p>>= - greater than or equal to (より大きいか、エコール)</p>
+        <p><= - less than or equal to (より少ないか、エコール)</p>
+        <p>!= - Not equal to (じゃない）</p>
+        <p>エコールはなんで二つある？って気になるんだろうけど、一つだけのエコールは、変数に価値を入れるときに使う。<br/>
+            だから一つだけ入れたら、エラーになる。条件じゃなく普通にテストしたい変数に新しい価値を入れてしまうことになるから。
+        </p>
+        <p>if (a < 10)<br/></p>
+        <p>aの価値：<input type = "text" id = "textInput">　<input type = "button" value = "コンディションを試す" onclick = "runCondition ()"></p>
+        <div id = output></div>
+    </body>
+</html>
+<script>
+    function runCondition (){
+        var a = parseInt(document.getElementById ("textInput").value,10);
+        if (a < 10){
+            document.getElementById ("output").innerHTML = "true";
+        }
+        else{
+            document.getElementById ("output").innerHTML = "false";
+        }
+    }
+</script>

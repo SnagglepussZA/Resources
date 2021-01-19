@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+
+<body>
+
+    <p>プログラミングの基礎</p>
+    <p>Forループ：</p>
+    <p> for (var i = 0; i < 10; i++){</p>
+    <p> }</p>
+    <input type = "button" id = "loopButton" value = "ループ開始" onclick = "runLoop()">
+    <div id = "loopOutput"></div>
+    <p>forループは、カウンターでコントロールするループ。だから何回繰り返してほしいのかわかるときに使う。
+        カウンターが何の数字で始まるのか、毎回何いくらで上がるのか、自由に変えられる。</p>
+    <p>
+        例えば：<br />
+        for (var i = 5; i < 50; i = i + 5){<br/>
+
+        }
+        <br/>
+    </p>
+    <p> だったらどうなるんだろう？</p>
+    <input type = "button" id = "loopButton2" value = "ループ開始" onclick = "runLoop2()">
+    <div id = "loopOutput2"></div>
+    <p>なんでこんなループ要るのかというと、時々グリッドとかで何か表示してたら、5つずつ増やしたいときある。
+        でもほとんどの場合はシンプルなカウンターとして使う</p>
+    
+
+</body>
+
+</html>
+
+<script type="text/javascript">
+
+    function runLoop (){
+        let output = "";
+        for (var i = 0; i < 10; i++){
+            output = output + "ループ" + (i + 1) + "回目で、i は" + i  + "<br />";
+            document.getElementById ("loopOutput").innerHTML = output;
+        }
+    }
+
+    function runLoop2 (){
+        let output = "";
+        for (var i = 5; i < 50; i = i + 5){
+            output = output + "ループ" + (i / 5) + "回目で、i は" + i  + "<br />";
+            document.getElementById ("loopOutput2").innerHTML = output;
+        }
+    }
+
+</script>

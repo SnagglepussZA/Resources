@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<h1>変数</h1>
+<p>javascript、そして他な「スクリプトイング言語」も、変数の使い方は他な言語の種類より簡単だ。変数をコードで作るときは
+    var (variableの略)で宣する　（Declare）。<br/>
+    <br/>
+    例えば：var age = 15;
+    <br/>
+    と書いたら、パソコンに、「"age" (年齢)という変数が存在してるよ、価値は15を入れてください」と伝えてるようなもの。
+    スクリプト以外は普通に先にパソコンに変数は何のデータの種類を持つのか教えないといけない。
+    <br/>
+</p>
+<p>
+    例として、このページのスクリプトタグの中に以下をやろう：<br/>
+    var price = 150;</br>
+    var money = 1000;</br>
+    var count = 1000;</br>
+    price (値段)という変数を宣して、150の価値を入れる<br/>
+    money (お金)という変数を宣して、1000の価値を入れる<br/>
+    count (数)という変数を宣して、0の価値を入れる<br/>
+
+</p>
+
+<p>例を初期化：<input type = "button" value = "始め" onclick = "showExample()"></p>
+<p>持っているお金　<div id = "money"></div></p>
+<p>トマト一個の値段　<div id = "price"></div></p>
+<p>トマト何個持ってる？　<div id = "count"></div></p>
+<input type = "button" value = "一つを買う" onclick = "buy1()">
+<p>ひとつ買うボタン押したら、お金から値段の価値が引かれて、カウントは一つ増える。なんで変数いるのかと思えば、とりあえず
+    データを覚えるために必要なんだ。
+</p>
+
+<p>上のことをやるために、ファンクション（関数）を使ってる</p>
+<p>function showExample (){<br/>
+    document.getElementById ("price").innerHTML = "" + price + "円";<br/>
+    document.getElementById ("money").innerHTML = "" + money + "円";<br/>
+    document.getElementById ("count").innerHTML = "" + count;<br/>
+}<br/>
+<br/>
+function buy1 (){<br/>
+    money = money - price;<br/>
+    count = count + 1;<br/>
+    showExample ();<br/>
+}<br/></p>
+
+<a href = "forloop.html">Forループに移そう</a>
+
+</html>
+<script>
+    var price = 150;
+    var money = 1000;
+    var count = 0;
+
+    function showExample (){
+        document.getElementById ("price").innerHTML = "" + price + "円";
+        document.getElementById ("money").innerHTML = "" + money + "円";
+        document.getElementById ("count").innerHTML = "" + count;
+    }
+
+    function buy1 (){
+        money = money - price;
+        count = count + 1;
+        showExample ();
+    }
+</script>
